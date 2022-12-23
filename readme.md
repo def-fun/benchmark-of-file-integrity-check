@@ -61,7 +61,7 @@ $ ls /tmp/test-*
 /tmp/test-rhash-blake2s.sfv         /tmp/test-rhash-sha1.sfv
 ```
 
-and the benchmark was saved to `benchmark.output`
+and the benchmark was saved to `benchmark.output`, see [sample files here](sample-files/)
 
 ```text
 test path: third-app/
