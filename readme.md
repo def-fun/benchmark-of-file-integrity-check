@@ -10,6 +10,13 @@ Include:
 - [rhash](https://github.com/rhash/RHash)
 - find ./ -type f -exec md5sum/sha1sum/sha256sum {} \; ... supported by most Linux system.
 
+to be tested:
+
+- [XxHash](https://github.com/Cyan4973/xxHash)
+- [cksfv](http://zakalwe.fi/~shd/foss/cksfv/)
+- [mmh3](https://github.com/hajimes/mmh3)
+- [imohash](https://github.com/kalafut/imohash)
+
 ## howto
 
 install cfv and rhash first
@@ -119,6 +126,67 @@ md5sum              0.331               12971
 sha384sum           0.438               21803               
 sha512sum           0.439               26219               
 sha256sum           0.603               17387              
+```
+
+one 2048M file in /tmp/zero/
+
+```text
+test path: /tmp/zero/
+
+# benchmark for cfv, 2 circle(s)
+algorithm           seconds             filesize
+--------------------------------------------------
+sha1                1.304               57
+sha256              1.43                81
+sha224              1.431               73
+crc                 1.804               345
+sha384              2.948               113
+sha512              2.952               145
+md5                 3.026               49
+
+# benchmark for rhash, 2 circle(s)
+algorithm           seconds             filesize
+--------------------------------------------------
+crc32c              0.444               35
+edonr512            1.002               155
+sha1                1.281               67
+btih                1.282               67
+aich                1.284               59
+crc32               1.32                222
+sha224              1.408               83
+sha256              1.416               91
+md4                 1.843               59
+ed2k                1.846               59
+edonr256            1.869               91
+has160              2.124               67
+blake2b             2.405               155
+sha512              2.932               155
+sha384              2.934               123
+md5                 2.993               59
+tiger               3.14                75
+tth                 3.633               66
+blake2s             3.791               91
+ripemd160           4.103               67
+sha3-224            5.086               83
+sha3-256            5.371               91
+sha3-384            6.921               123
+whirlpool           8.551               155
+sha3-512            9.865               155
+gost12-256          16.605              91
+gost12-512          16.619              155
+gost94-cryptopro    25.151              91
+gost94              25.164              91
+snefru128           42.442              59
+snefru256           63.579              91
+
+# benchmark for find-x-sum, 2 circle(s)
+algorithm           seconds             filesize
+--------------------------------------------------
+sha1sum             2.791               67
+md5sum              3.13                59
+sha384sum           4.33                123
+sha512sum           4.335               155
+sha256sum           6.162               91
 ```
 
 ## conclusion
